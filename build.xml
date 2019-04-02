@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Burp-NessusLoader" default="build jar">
-  <property environment="env"/>
   <target name="build jar" depends="compile java">
     <zip destfile="Burp-NessusLoader.jar">
       <fileset dir="build">
@@ -9,8 +8,11 @@
     </zip>
   </target>
   <target name="compile java">
+    <path id="classpath">
+        <fileset dir="lib" includes="**/*.jar" />
+    </path>
     <mkdir dir="build"/>
-    <javac srcdir="src" destdir="build" includeantruntime="false"/>
+    <javac srcdir="src" destdir="build" includeantruntime="false" classpathref="classpath"/>
   </target>
   <target name="clean">
     <delete dir="build"/>
