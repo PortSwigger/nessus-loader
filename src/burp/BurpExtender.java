@@ -9,6 +9,7 @@ import org.w3c.dom.*;
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
+import javax.xml.XMLConstants;
 
 
 public class BurpExtender implements IBurpExtender, ITab, ActionListener
@@ -84,6 +85,7 @@ public class BurpExtender implements IBurpExtender, ITab, ActionListener
 				}
 
 				DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+				dbFactory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
 				DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 				Document doc;
 

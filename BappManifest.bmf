@@ -2,12 +2,11 @@ Uuid: 13771216fa0048ce956261b820caa435
 ExtensionType: 1
 Name: Nessus Loader
 RepoName: nessus-loader
-ScreenVersion: 1.0
-SerialVersion: 0
+ScreenVersion: 1.0.1
+SerialVersion: 1
 MinPlatformVersion: 0
 ProOnly: False
 Author: Andrew Orr
 ShortDescription: Parse Nessus output to detect web servers and add to Site Map
-EntryPoint: build/libs/Burp-NessusLoader.jar
+EntryPoint: Burp-NessusLoader.jar
 BuildCommand: ant "build jar"
-
